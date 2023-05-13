@@ -1,7 +1,7 @@
 
 import java.util.ArrayList;
-        import java.util.HashMap;
-        import java.util.Set;
+import java.util.HashMap;
+import java.util.Set;
 
 public class UndirectedGraph {
     int V;
@@ -49,9 +49,9 @@ public class UndirectedGraph {
 
     }
 
-    public UndirectedGraph clone(){
-        UndirectedGraph newGraph= new UndirectedGraph(adj);
-        newGraph.color=this.color;
+    public UndirectedGraph clone() {
+        UndirectedGraph newGraph = new UndirectedGraph(adj);
+        newGraph.color = this.color;
         return newGraph;
     }
 
@@ -84,8 +84,6 @@ public class UndirectedGraph {
                 }
             }
         }
-
-
     }
 
     public boolean isCycle() {
@@ -146,21 +144,95 @@ public class UndirectedGraph {
 //        return max;
 //    }
 
-    public boolean isEulerCircuit(int s,int parent){
-        visited.add(s);
-        for (int j = 0; j < adj.get(s).size(); j++) {
-            if (!visited.contains(adj.get(s).get(j))) {
-                if (isCycleUtil(adj.get(s).get(j), s)) {
-                    return true;
-                }
-            } else if (adj.get(s).get(j) != parent) {
-                return true;
+    public boolean isEulerCircuit(int s, int parent) {
+        int count = 0;
+        Set<Integer> keySet = adj.keySet();
+        for (Integer i : keySet) {
+            if (adj.get(i).size() % 2 != 0) {
+                count++;
             }
         }
-        visited.remove(s);
+        if (count == 2 || count == 0) {
+            return true;
+        }
         return false;
     }
 
+    public boolean isBipartite() {
+        color = new HashMap<Integer, String>();
+        Set<Integer> keySet = adj.keySet();
+        for (Integer i : keySet) {
+            color.put(i, "white");
+        }
+        for (Integer i : keySet) {
+            if (color.get(i).equals("white")) {
+                if (!isBipartiteUtil(i)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 
+    private boolean isBipartiteUtil(int s) {
+        color.put(s, "red");
+        for (int j = 0; j < adj.get(s).size(); j++) {
+            if (color.get(adj.get(s).get(j)).equals("white")) {
+                if (!isBipartiteUtil(adj.get(s).get(j))) {
+                    return false;
+                }
+            } else if (color.get(adj.get(s).get(j)).equals("red")) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean findPath(int s, int d) {
+        visited = new ArrayList<Integer>();
+        return findPathUtil(s, d);
+    }
+
+    private boolean findPathUtil(int s, int d) {
+        visited.add(s);
+        if (s == d) {
+            return true;
+        }
+        for (int j = 0; j < adj.get(s).size(); j++) {
+            if (!visited.contains(adj.get(s).get(j))) {
+                if (findPathUtil(adj.get(s).get(j), d)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public int levelOfNode(int node) {
+        visited = new ArrayList<Integer>();
+        ArrayList<Integer> queue = new ArrayList<Integer>();
+        int level=0;
+        queue.add(0);
+        visited.add(0);
+        while(!visited.contains(node)){
+            ArrayList<Integer> queue1 = new ArrayList<Integer>();
+            while (!queue.isEmpty()) {
+                int u = queue.remove(0);
+                for (int i = 0; i < adj.get(u).size(); i++) {
+                    if (!visited.contains(adj.get(u).get(i))) {
+                        visited.add(adj.get(u).get(i));
+                        queue1.add(adj.get(u).get(i));
+                    }
+                }
+
+            }
+            queue=queue1;
+            level++;
+            if(queue1.size()==0){
+                return -1;
+            }
+        }
+        return level;
+    }
 
 }

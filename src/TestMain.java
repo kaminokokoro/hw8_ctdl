@@ -66,9 +66,17 @@ public class TestMain {
                        {0,0,1,0,0},
                        {0,0,0,1,1}};
         gridGraph g3 = new gridGraph(grid);
-        System.out.println("câu 7 và câu 8");
+        System.out.println("câu 7 và câu 8:");
         System.out.println("number of islands:"+g3.numOfIslands());
         System.out.println("Unit Area of largest region of 1's:"+g3.UnitAreaOfLargestOfIslands());
+
+        System.out.println("câu 10 và câu 11:");
+        System.out.println("is Bipartite:"+g.isBipartite());
+
+        System.out.println("level of node 5:"+g.levelOfNode(5));
+        System.out.println("level of node 4:"+g.levelOfNode(4));
+        System.out.println("level of node 3:"+g.levelOfNode(3));
+        System.out.println("level of node 2:"+g.levelOfNode(2));
 
 
 
