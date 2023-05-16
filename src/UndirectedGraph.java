@@ -114,37 +114,37 @@ public class UndirectedGraph {
         return false;
     }
 
-//    public int numIslands(){
-//        visited = new ArrayList<Integer>();
-//        int count=0;
-//        Set<Integer> keySet = adj.keySet();
-//        for (Integer i : keySet) {
-//            if (!visited.contains(i)) {
-//                count++;
-//                DFSVisit(i);
-//            }
-//        }
-//        return count;
-//    }
-//
-//    public int UnitAreaOfLargestRegionOf1s(){
-//        visited = new ArrayList<Integer>();
-//        int max=0;
-//        int count=0;
-//        Set<Integer> keySet = adj.keySet();
-//        for (Integer i : keySet) {
-//            if (!visited.contains(i)) {
-//                DFSVisit(i);
-//                count=visited.size()-count;
-//                if(count>max){
-//                    max=count;
-//                }
-//            }
-//        }
-//        return max;
-//    }
+    public int numIslands(){
+        visited = new ArrayList<Integer>();
+        int count=0;
+        Set<Integer> keySet = adj.keySet();
+        for (Integer i : keySet) {
+            if (!visited.contains(i)) {
+                count++;
+                DFSVisit(i);
+            }
+        }
+        return count;
+    }
 
-    public boolean isEulerCircuit(int s, int parent) {
+    public int UnitAreaOfLargestRegionOf1s(){
+        visited = new ArrayList<Integer>();
+        int max=0;
+        int count=0;
+        Set<Integer> keySet = adj.keySet();
+        for (Integer i : keySet) {
+            if (!visited.contains(i)) {
+                DFSVisit(i);
+                count=visited.size()-count;
+                if(count>max){
+                    max=count;
+                }
+            }
+        }
+        return max;
+    }
+
+    public boolean isEulerCircuit() {
         int count = 0;
         Set<Integer> keySet = adj.keySet();
         for (Integer i : keySet) {

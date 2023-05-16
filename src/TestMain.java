@@ -70,7 +70,7 @@ public class TestMain {
         System.out.println("number of islands:"+g3.numOfIslands());
         System.out.println("Unit Area of largest region of 1's:"+g3.UnitAreaOfLargestOfIslands());
 
-        System.out.println("câu 10 và câu 11:");
+        System.out.println("câu 10, câu 11 và câu 15:");
         System.out.println("is Bipartite:"+g.isBipartite());
 
         System.out.println("level of node 5:"+g.levelOfNode(5));
@@ -78,10 +78,6 @@ public class TestMain {
         System.out.println("level of node 3:"+g.levelOfNode(3));
         System.out.println("level of node 2:"+g.levelOfNode(2));
 
-
-
-
-
-
+        System.out.println("is Euler Circuit:"+g.isEulerCircuit());
     }
 }
