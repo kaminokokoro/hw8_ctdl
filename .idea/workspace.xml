@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a76c45ec-e568-4659-99fd-df066f98ac3f" name="Changes" comment="update ex15">
+    <list default="true" id="a76c45ec-e568-4659-99fd-df066f98ac3f" name="Changes" comment="update test main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +65,7 @@
       <workItem from="1683964650715" duration="2101000" />
       <workItem from="1683987784420" duration="1658000" />
       <workItem from="1684051414951" duration="1887000" />
-      <workItem from="1684238293672" duration="295000" />
+      <workItem from="1684238293672" duration="936000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1683814908155</created>
@@ -89,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684238473177</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update test main">
+      <created>1684238603703</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684238603703</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +116,7 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="update ex10 and 11" />
     <MESSAGE value="update ex15" />
-    <option name="LAST_COMMIT_MESSAGE" value="update ex15" />
+    <MESSAGE value="update test main" />
+    <option name="LAST_COMMIT_MESSAGE" value="update test main" />
   </component>
 </project>

@@ -31,7 +31,7 @@ public class TestMain {
         System.out.println("add edge: 3 <-> 0");
         g.addEdge(3, 0);
         System.out.println("is cycle:"+g.isCycle());
-//        System.out.println("number of islands:"+g.numIslands());
+        System.out.println("number of islands:"+g.numIslands());
 
         System.out.println("=====================================");
         DirectedGraph g2 = new DirectedGraph();
