@@ -60,13 +60,14 @@ public class TestMain {
         System.out.println("is cycle:"+g2.isCycle());
 
         System.out.println("=====================================");
+        System.out.println("câu 7 và câu 8:");
         System.out.println("Graph3: Grid Graph");
         int[][] grid= {{1,1,0,0,0},
                        {1,1,0,0,0},
                        {0,0,1,0,0},
                        {0,0,0,1,1}};
         gridGraph g3 = new gridGraph(grid);
-        System.out.println("câu 7 và câu 8:");
+
         System.out.println("number of islands:"+g3.numOfIslands());
         System.out.println("Unit Area of largest region of 1's:"+g3.UnitAreaOfLargestOfIslands());
 
@@ -77,6 +78,7 @@ public class TestMain {
         System.out.println("level of node 4:"+g.levelOfNode(4));
         System.out.println("level of node 3:"+g.levelOfNode(3));
         System.out.println("level of node 2:"+g.levelOfNode(2));
+        System.out.println("level of node 1:"+g.levelOfNode(1));
 
         System.out.println("is Euler Circuit:"+g.isEulerCircuit());
     }
